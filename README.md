@@ -24,14 +24,14 @@ Transformar vestígios digitais em informações tecnicamente analisadas e docum
 
 ## 👥 Equipe Nexus
 
-| Integrante                       | Responsabilidade          |
-| -------------------------------- | ------------------------- |
-| **Gabriel Lucas Alves da Silva** | Gestão do Projeto / Líder |
-| **Thiago Costa Renovato**        | Aquisição e Preservação   |
-| **Wesley**                       | Análise Forense           |
-| **Matheus**                      | Sistemas e Ferramentas    |
-| **Samer**                        | Análise Forense           |
-| **Beatriz**                      | Documentação e Relatório  |
+| Integrante                          | Responsabilidade                         |
+| ----------------------------------- | ---------------------------------------- |
+| **Gabriel Lucas Alves da Silva**    | Gestor do Projeto / Líder                |
+| **Thiago Costa Renovato**           | Perito de Aquisição e Preservação        |
+| **Wesley Thiago Matias Xavier**     | Perito de Análise Forense                |
+| **Matheus Nascimento Cardoso**      | Analista de Sistemas e Ferramentas       |
+| **Samer Osama Mohammad Taleeb**     | Perito de Análise Forense                |
+| **Bianca Xavier de Oliveira**       | Analista de Documentação e Relatório     |
 
 ## 🧪 Projeto
 
