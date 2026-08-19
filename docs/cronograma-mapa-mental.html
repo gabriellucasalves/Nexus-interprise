@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexus — Mapa mental do cronograma</title>
+  <title>Nexus — Cronograma de sprints</title>
   <style>
     :root {
       --bg: #0f1419;
@@ -11,10 +11,11 @@
       --line: #3d4f63;
       --text: #e8eef4;
       --muted: #9aabbc;
-      --done: #3d8b6e;
-      --wait: #c48a2a;
-      --rule: #c44b4b;
+      --entregue: #3d8b6e;
+      --fazer: #c48a2a;
+      --dev: #3d6ea8;
       --accent: #5b8def;
+      --rule: #c44b4b;
     }
     * { box-sizing: border-box; }
     body {
@@ -23,110 +24,131 @@
       background: var(--bg);
       color: var(--text);
     }
-    header {
-      padding: 28px 32px 12px;
-      border-bottom: 1px solid var(--line);
-    }
-    header h1 {
-      margin: 0 0 6px;
-      font-size: 22px;
-      font-weight: 650;
-    }
+    header { padding: 22px 28px 10px; border-bottom: 1px solid var(--line); }
+    header h1 { margin: 0 0 6px; font-size: 22px; font-weight: 650; }
     header p { margin: 0; color: var(--muted); font-size: 14px; }
     .rule {
-      margin: 16px 32px 0;
-      padding: 12px 16px;
+      margin: 14px 28px 0;
+      padding: 10px 14px;
       background: #2a1717;
       border-left: 4px solid var(--rule);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 650;
     }
-    .map {
+    .board {
       display: grid;
-      grid-template-columns: 1fr 280px 1fr;
-      gap: 18px;
-      padding: 28px 32px 48px;
+      grid-template-columns: 1.15fr 0.9fr 0.95fr;
+      gap: 16px;
+      padding: 18px 28px 40px;
       align-items: start;
     }
-    .col { display: flex; flex-direction: column; gap: 14px; }
-    .center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      padding-top: 40px;
-    }
-    .hub {
-      width: 100%;
-      text-align: center;
-      background: var(--panel);
-      border: 2px solid var(--accent);
-      padding: 22px 16px;
-    }
-    .hub strong { display: block; font-size: 20px; }
-    .hub span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
-    .branch {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      padding: 14px 16px;
-    }
-    .branch h2 {
-      margin: 0 0 10px;
-      font-size: 14px;
+    .col { display: flex; flex-direction: column; gap: 12px; }
+    .col h2 {
+      margin: 0;
+      font-size: 13px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-    .branch.done h2 { color: var(--done); }
-    .branch.wait h2 { color: var(--wait); }
-    .branch.cycle h2 { color: var(--accent); }
-    .branch.who h2 { color: #8aa4c7; }
-    ul { margin: 0; padding-left: 18px; }
-    li { margin: 5px 0; font-size: 13.5px; line-height: 1.4; color: var(--text); }
-    .tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 1px 6px;
-      margin-left: 4px;
-      vertical-align: middle;
-    }
-    .tag-done { background: #1d3d32; color: #8fd4b8; }
-    .tag-wait { background: #3d3014; color: #e6c072; }
-    table { width: 100%; border-collapse: collapse; font-size: 13px; }
-    th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #2a3542; }
-    th { color: var(--muted); font-weight: 600; }
-    footer {
-      padding: 0 32px 32px;
       color: var(--muted);
+    }
+    .hint { margin: 0; font-size: 12px; color: var(--muted); }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 12px;
+    }
+    .hub {
+      text-align: center;
+      border: 2px solid var(--accent);
+      padding: 16px 10px;
+    }
+    .hub strong { display: block; font-size: 18px; }
+    .hub span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+    .sprint {
+      background: #141b23;
+      border: 1px solid var(--line);
+      padding: 10px;
+    }
+    .sprint.st-entregue { border-left: 4px solid var(--entregue); }
+    .sprint.st-fazer { border-left: 4px solid var(--fazer); }
+    .sprint.st-desenvolvimento { border-left: 4px solid var(--dev); }
+    .sprint-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .sprint-head b { font-size: 14px; }
+    .meta { font-size: 12px; color: var(--muted); }
+    label { display: block; font-size: 11px; color: var(--muted); margin: 8px 0 3px; }
+    textarea, input, select {
+      width: 100%;
+      background: #0f1419;
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 6px 8px;
+      font: inherit;
+      font-size: 13px;
+    }
+    textarea { min-height: 58px; resize: vertical; }
+    button {
+      background: #243044;
+      color: var(--text);
+      border: 1px solid var(--line);
+      padding: 6px 10px;
       font-size: 12px;
+      cursor: pointer;
     }
-    @media (max-width: 980px) {
-      .map { grid-template-columns: 1fr; }
-      .center { padding-top: 0; }
+    button:hover { border-color: var(--accent); }
+    .row { display: flex; gap: 6px; margin-top: 8px; }
+    .row button { flex: 1; }
+    .topics { list-style: none; margin: 8px 0 0; padding: 0; }
+    .topics li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 5px 0;
+      font-size: 13px;
     }
-    @media print {
-      body { background: #fff; color: #111; }
-      header, .branch, .hub, .rule { break-inside: avoid; }
-      .hub, .branch { border-color: #999; }
-      header p, footer, .hub span, li { color: #333; }
+    .topics input { flex: 1; }
+    .tag {
+      flex: 0 0 auto;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      text-transform: uppercase;
     }
+    .tag-entregue { background: #1d3d32; color: #8fd4b8; }
+    .tag-fazer { background: #3d3014; color: #e6c072; }
+    .tag-desenvolvimento { background: #1c334d; color: #9ec3ef; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 5px 4px; border-bottom: 1px solid #2a3542; }
+    th { color: var(--muted); font-weight: 600; }
+    .pool-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid #2a3542;
+      font-size: 13px;
+    }
+    footer { padding: 0 28px 28px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 980px) { .board { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <header>
-    <h1>Nexus — Mapa mental do cronograma</h1>
+    <h1>Nexus — Cronograma de sprints</h1>
     <p>Consultoria em Perícia Digital · UNICEPLAC · ADS 4º semestre · Conectando evidências. Revelando respostas.</p>
   </header>
+  <div class="rule">Toda quarta-feira tem entrega de sprint. Mova a sprint para a esquerda quando for trabalhar nela, escreva o texto e os tópicos, e marque o status. A alteração vale neste navegador.</div>
 
-  <div class="rule">Regra fixa: toda quarta-feira tem entrega de sprint. O conteúdo das próximas sprints ainda será definido pelo professor.</div>
-
-  <div class="map">
+  <div class="board">
     <div class="col">
-      <section class="branch who">
+      <div class="panel">
         <h2>Quem somos</h2>
-        <ul>
-          <li>Equipe acadêmica de perícia digital</li>
-          <li>Projeto: Investigação e Análise Forense Digital</li>
+        <ul class="topics" style="display:block">
           <li>Gabriel — Gestor / Líder</li>
           <li>Thiago — Aquisição e Preservação</li>
           <li>Wesley — Análise Forense</li>
@@ -134,91 +156,198 @@
           <li>Samer — Análise Forense</li>
           <li>Bianca — Documentação e Relatório</li>
         </ul>
-      </section>
-
-      <section class="branch done">
-        <h2>Sprint 01 — já entregue</h2>
-        <ul>
-          <li>Problema da empresa Nexus <span class="tag tag-done">FEITO</span></li>
-          <li>Justificativa do projeto <span class="tag tag-done">FEITO</span></li>
-          <li>Identidade, objetivo e equipe <span class="tag tag-done">FEITO</span></li>
-          <li>Documento da primeira entrega</li>
-          <li>Repositório e README no GitHub</li>
-          <li>Quadro Trello com fluxo de sprint</li>
-        </ul>
-      </section>
+      </div>
+      <h2>Sprints em trabalho / entregues</h2>
+      <p class="hint">Campo da esquerda: sprints já abertas. Altere o status para pintar todos os tópicos.</p>
+      <div id="esquerda"></div>
     </div>
 
-    <div class="center">
+    <div class="col">
       <div class="hub">
         <strong>NEXUS</strong>
         <span>Perícia Digital</span>
         <span>Toda quarta = entrega</span>
       </div>
-      <section class="branch wait">
-        <h2>Próximas sprints</h2>
-        <p style="margin:0 0 8px;font-size:13px;color:var(--muted);">Datas fixas. Conteúdo a definir.</p>
-        <table>
-          <thead>
-            <tr><th>Quarta</th><th>Sprint</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>19/08</td><td>02</td><td>A definir</td></tr>
-            <tr><td>26/08</td><td>03</td><td>A definir</td></tr>
-            <tr><td>02/09</td><td>04</td><td>A definir</td></tr>
-            <tr><td>09/09</td><td>05</td><td>A definir</td></tr>
-            <tr><td>16/09</td><td>06</td><td>A definir</td></tr>
-            <tr><td>23/09</td><td>07</td><td>A definir</td></tr>
-            <tr><td>30/09</td><td>08</td><td>A definir</td></tr>
-            <tr><td>07/10</td><td>09</td><td>A definir</td></tr>
-            <tr><td>14/10</td><td>10</td><td>A definir</td></tr>
-            <tr><td>21/10</td><td>11</td><td>A definir</td></tr>
-            <tr><td>28/10</td><td>12</td><td>A definir</td></tr>
-            <tr><td>04/11</td><td>13</td><td>A definir</td></tr>
-            <tr><td>11/11</td><td>14</td><td>A definir</td></tr>
-            <tr><td>18/11</td><td>15</td><td>A definir</td></tr>
-            <tr><td>25/11</td><td>16</td><td>A definir</td></tr>
-            <tr><td>02/12</td><td>17</td><td>A definir</td></tr>
-          </tbody>
-        </table>
-      </section>
+      <div class="panel">
+        <h2>Sprints da quarta</h2>
+        <p class="hint">Ainda sem conteúdo. Use “Abrir à esquerda” para escrever a sprint.</p>
+        <div id="pool"></div>
+      </div>
     </div>
 
     <div class="col">
-      <section class="branch cycle">
-        <h2>A fazer no Trello</h2>
-        <p style="margin:0 0 8px;font-size:13px;color:var(--muted);">Mesmos cards do quadro. Sem data ainda.</p>
-        <table>
-          <thead>
-            <tr><th>Atividade</th><th>Data</th><th>Status</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Identificação do incidente e do ambiente</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Aquisição e preservação de evidências</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Cadeia de custódia</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Análise de artefatos digitais</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Ferramentas forenses e análise de sistemas</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Documentação técnica contínua</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Relatório técnico final</td><td>Sem data</td><td>A fazer</td></tr>
-            <tr><td>Apresentação da investigação</td><td>Sem data</td><td>A fazer</td></tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="branch who">
+      <div class="panel">
+        <h2>Pontos da investigação</h2>
+        <p class="hint">Lembrete da equipe: além das sprints semanais, estes pontos precisam ser cobertos no projeto. O detalhe do andamento fica no Trello.</p>
+        <ul class="topics" style="display:block">
+          <li>Identificação do incidente e do ambiente</li>
+          <li>Aquisição e preservação de evidências</li>
+          <li>Cadeia de custódia</li>
+          <li>Análise de artefatos digitais</li>
+          <li>Ferramentas forenses e análise de sistemas</li>
+          <li>Documentação técnica contínua</li>
+          <li>Relatório técnico final</li>
+          <li>Apresentação da investigação</li>
+        </ul>
+      </div>
+      <div class="panel">
         <h2>Onde acompanhamos</h2>
-        <ul>
+        <ul class="topics" style="display:block">
           <li>Trello: A definir → A fazer → Em desenvolvimento → Revisão → Concluído</li>
           <li>GitHub: github.com/gabriellucasalves/Nexus-interprise</li>
-          <li>Cronograma público: https://gabriellucasalves.github.io/Nexus-interprise/cronograma-mapa-mental.html</li>
-          <li>Entrega oficial: toda quarta-feira</li>
+          <li>Este cronograma: gabriellucasalves.github.io/Nexus-interprise/cronograma-mapa-mental.html</li>
         </ul>
-      </section>
+      </div>
     </div>
   </div>
+  <footer>Sprint 01 já está fechada e marcada como entregue. As demais sprints só ganham texto e tópicos quando forem abertas à esquerda. Status: a fazer (amarelo), em desenvolvimento (azul) e entregue (verde).</footer>
 
-  <footer>
-    Fonte: primeira entrega da disciplina + quadro Trello NEXUS | Perícia Digital. Atualizado em 19/08/2026. As sprints 02 em diante ficam como A DEFINIR até o professor passar as instruções; só a cadência de quarta-feira está fechada. Os cards de A fazer entram no cronograma sem data até serem alocados em uma sprint.
-  </footer>
+  <script>
+    const KEY = "nexus-cronograma-v2";
+    const STATUS = {
+      fazer: "A fazer",
+      desenvolvimento: "Em desenvolvimento",
+      entregue: "Entregue"
+    };
+    const DATAS = [
+      ["02", "19/08/2026"], ["03", "26/08/2026"], ["04", "02/09/2026"],
+      ["05", "09/09/2026"], ["06", "16/09/2026"], ["07", "23/09/2026"],
+      ["08", "30/09/2026"], ["09", "07/10/2026"], ["10", "14/10/2026"],
+      ["11", "21/10/2026"], ["12", "28/10/2026"], ["13", "04/11/2026"],
+      ["14", "11/11/2026"], ["15", "18/11/2026"], ["16", "25/11/2026"],
+      ["17", "02/12/2026"]
+    ];
+
+    function padrao() {
+      const sprints = [{
+        id: "s01",
+        numero: "01",
+        data: "Já realizada",
+        status: "entregue",
+        texto: "Identidade da equipe, problema, justificativa e gestão do projeto.",
+        topicos: [
+          "Problema da empresa Nexus",
+          "Justificativa do projeto",
+          "Identidade, objetivo e equipe",
+          "Documento da primeira entrega",
+          "Repositório e README no GitHub",
+          "Quadro Trello com fluxo de sprint",
+          "Cronograma da equipe"
+        ],
+        esquerda: true
+      }];
+      DATAS.forEach(([numero, data]) => {
+        sprints.push({
+          id: "s" + numero,
+          numero,
+          data,
+          status: "fazer",
+          texto: "",
+          topicos: [],
+          esquerda: false
+        });
+      });
+      return sprints;
+    }
+
+    function load() {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return padrao();
+    }
+    function save() {
+      localStorage.setItem(KEY, JSON.stringify(state));
+    }
+
+    let state = load();
+
+    function esc(s) {
+      return String(s || "").replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[c]));
+    }
+
+    function card(s, modo) {
+      const st = s.status || "fazer";
+      if (modo === "pool") {
+        return `<div class="pool-item">
+          <span>Quarta ${esc(s.data)} · Sprint ${esc(s.numero)}</span>
+          <button data-act="abrir" data-id="${s.id}">Abrir à esquerda</button>
+        </div>`;
+      }
+      const topicos = (s.topicos || []).map((t, i) => `
+        <li>
+          <span class="tag tag-${st}">${STATUS[st]}</span>
+          <input data-act="topico" data-id="${s.id}" data-i="${i}" value="${esc(t)}" />
+          <button data-act="del-topico" data-id="${s.id}" data-i="${i}">x</button>
+        </li>`).join("");
+      return `<article class="sprint st-${st}">
+        <div class="sprint-head">
+          <div><b>Sprint ${esc(s.numero)}</b><div class="meta">${esc(s.data)}</div></div>
+          <select data-act="status" data-id="${s.id}">
+            <option value="fazer" ${st === "fazer" ? "selected" : ""}>A fazer</option>
+            <option value="desenvolvimento" ${st === "desenvolvimento" ? "selected" : ""}>Em desenvolvimento</option>
+            <option value="entregue" ${st === "entregue" ? "selected" : ""}>Entregue</option>
+          </select>
+        </div>
+        <label>Texto da sprint</label>
+        <textarea data-act="texto" data-id="${s.id}">${esc(s.texto)}</textarea>
+        <label>Tópicos</label>
+        <ul class="topics">${topicos}</ul>
+        <div class="row">
+          <button data-act="add-topico" data-id="${s.id}">+ Tópico</button>
+          ${s.numero !== "01" ? `<button data-act="voltar" data-id="${s.id}">Voltar para as quartas</button>` : ""}
+        </div>
+      </article>`;
+    }
+
+    function render() {
+      const esq = state.filter((s) => s.esquerda);
+      const pool = state.filter((s) => !s.esquerda);
+      document.getElementById("esquerda").innerHTML = esq.map((s) => card(s, "edit")).join("") || '<p class="hint">Nenhuma sprint aberta à esquerda.</p>';
+      document.getElementById("pool").innerHTML = pool.map((s) => card(s, "pool")).join("");
+    }
+
+    function find(id) { return state.find((s) => s.id === id); }
+
+    document.body.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-act]");
+      if (!btn || !["abrir", "voltar", "add-topico", "del-topico"].includes(btn.dataset.act)) return;
+      const s = find(btn.dataset.id);
+      if (!s) return;
+      if (btn.dataset.act === "abrir") s.esquerda = true;
+      if (btn.dataset.act === "voltar") s.esquerda = false;
+      if (btn.dataset.act === "add-topico") s.topicos.push("Novo tópico");
+      if (btn.dataset.act === "del-topico") s.topicos.splice(Number(btn.dataset.i), 1);
+      save();
+      render();
+    });
+
+    document.body.addEventListener("change", (e) => {
+      const el = e.target.closest("[data-act]");
+      if (!el) return;
+      const s = find(el.dataset.id);
+      if (!s) return;
+      if (el.dataset.act === "status") s.status = el.value;
+      if (el.dataset.act === "texto") s.texto = el.value;
+      if (el.dataset.act === "topico") s.topicos[Number(el.dataset.i)] = el.value;
+      save();
+      if (el.dataset.act === "status") render();
+    });
+
+    document.body.addEventListener("input", (e) => {
+      const el = e.target.closest("[data-act]");
+      if (!el || !["texto", "topico"].includes(el.dataset.act)) return;
+      const s = find(el.dataset.id);
+      if (!s) return;
+      if (el.dataset.act === "texto") s.texto = el.value;
+      if (el.dataset.act === "topico") s.topicos[Number(el.dataset.i)] = el.value;
+      save();
+    });
+
+    render();
+  </script>
 </body>
 </html>
