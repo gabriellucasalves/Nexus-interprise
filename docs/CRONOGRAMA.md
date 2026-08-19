@@ -1,4 +1,4 @@
-# Cronograma Nexus
+# Cronograma Nexus — Consulta em Perícia Digital
 
 **Regra fixa:** toda **quarta-feira** tem entrega de sprint.
 
