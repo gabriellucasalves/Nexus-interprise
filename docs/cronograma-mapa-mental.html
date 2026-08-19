@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus — Mapa mental do cronograma</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --line: #3d4f63;
+      --text: #e8eef4;
+      --muted: #9aabbc;
+      --done: #3d8b6e;
+      --wait: #c48a2a;
+      --rule: #c44b4b;
+      --accent: #5b8def;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    header {
+      padding: 28px 32px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+    header h1 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      font-weight: 650;
+    }
+    header p { margin: 0; color: var(--muted); font-size: 14px; }
+    .rule {
+      margin: 16px 32px 0;
+      padding: 12px 16px;
+      background: #2a1717;
+      border-left: 4px solid var(--rule);
+      font-size: 15px;
+      font-weight: 650;
+    }
+    .map {
+      display: grid;
+      grid-template-columns: 1fr 280px 1fr;
+      gap: 18px;
+      padding: 28px 32px 48px;
+      align-items: start;
+    }
+    .col { display: flex; flex-direction: column; gap: 14px; }
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding-top: 40px;
+    }
+    .hub {
+      width: 100%;
+      text-align: center;
+      background: var(--panel);
+      border: 2px solid var(--accent);
+      padding: 22px 16px;
+    }
+    .hub strong { display: block; font-size: 20px; }
+    .hub span { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }
+    .branch {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+    }
+    .branch h2 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .branch.done h2 { color: var(--done); }
+    .branch.wait h2 { color: var(--wait); }
+    .branch.cycle h2 { color: var(--accent); }
+    .branch.who h2 { color: #8aa4c7; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin: 5px 0; font-size: 13.5px; line-height: 1.4; color: var(--text); }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 6px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+    .tag-done { background: #1d3d32; color: #8fd4b8; }
+    .tag-wait { background: #3d3014; color: #e6c072; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #2a3542; }
+    th { color: var(--muted); font-weight: 600; }
+    footer {
+      padding: 0 32px 32px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 980px) {
+      .map { grid-template-columns: 1fr; }
+      .center { padding-top: 0; }
+    }
+    @media print {
+      body { background: #fff; color: #111; }
+      header, .branch, .hub, .rule { break-inside: avoid; }
+      .hub, .branch { border-color: #999; }
+      header p, footer, .hub span, li { color: #333; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nexus — Mapa mental do cronograma</h1>
+    <p>Consultoria em Perícia Digital · UNICEPLAC · ADS 4º semestre · Conectando evidências. Revelando respostas.</p>
+  </header>
+
+  <div class="rule">Regra fixa: toda quarta-feira tem entrega de sprint. O conteúdo das próximas sprints ainda será definido pelo professor.</div>
+
+  <div class="map">
+    <div class="col">
+      <section class="branch who">
+        <h2>Quem somos</h2>
+        <ul>
+          <li>Equipe acadêmica de perícia digital</li>
+          <li>Projeto: Investigação e Análise Forense Digital</li>
+          <li>Gabriel — Gestor / Líder</li>
+          <li>Thiago — Aquisição e Preservação</li>
+          <li>Wesley — Análise Forense</li>
+          <li>Matheus — Sistemas e Ferramentas</li>
+          <li>Samer — Análise Forense</li>
+          <li>Bianca — Documentação e Relatório</li>
+        </ul>
+      </section>
+
+      <section class="branch done">
+        <h2>Sprint 01 — já entregue</h2>
+        <ul>
+          <li>Problema da empresa Nexus <span class="tag tag-done">FEITO</span></li>
+          <li>Justificativa do projeto <span class="tag tag-done">FEITO</span></li>
+          <li>Identidade, objetivo e equipe <span class="tag tag-done">FEITO</span></li>
+          <li>Documento da primeira entrega</li>
+          <li>Repositório e README no GitHub</li>
+          <li>Quadro Trello com fluxo de sprint</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="center">
+      <div class="hub">
+        <strong>NEXUS</strong>
+        <span>Perícia Digital</span>
+        <span>Toda quarta = entrega</span>
+      </div>
+      <section class="branch wait">
+        <h2>Próximas sprints</h2>
+        <p style="margin:0 0 8px;font-size:13px;color:var(--muted);">Datas fixas. Conteúdo a definir.</p>
+        <table>
+          <thead>
+            <tr><th>Quarta</th><th>Sprint</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>19/08</td><td>02</td><td>A definir</td></tr>
+            <tr><td>26/08</td><td>03</td><td>A definir</td></tr>
+            <tr><td>02/09</td><td>04</td><td>A definir</td></tr>
+            <tr><td>09/09</td><td>05</td><td>A definir</td></tr>
+            <tr><td>16/09</td><td>06</td><td>A definir</td></tr>
+            <tr><td>23/09</td><td>07</td><td>A definir</td></tr>
+            <tr><td>30/09</td><td>08</td><td>A definir</td></tr>
+            <tr><td>07/10</td><td>09</td><td>A definir</td></tr>
+            <tr><td>14/10</td><td>10</td><td>A definir</td></tr>
+            <tr><td>21/10</td><td>11</td><td>A definir</td></tr>
+            <tr><td>28/10</td><td>12</td><td>A definir</td></tr>
+            <tr><td>04/11</td><td>13</td><td>A definir</td></tr>
+            <tr><td>11/11</td><td>14</td><td>A definir</td></tr>
+            <tr><td>18/11</td><td>15</td><td>A definir</td></tr>
+            <tr><td>25/11</td><td>16</td><td>A definir</td></tr>
+            <tr><td>02/12</td><td>17</td><td>A definir</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="branch cycle">
+        <h2>Ciclo previsto da investigação</h2>
+        <p style="margin:0 0 8px;font-size:13px;color:var(--muted);">Entra em sprint só depois das instruções do professor.</p>
+        <ul>
+          <li>Identificação do incidente e do ambiente</li>
+          <li>Aquisição e preservação de evidências — Thiago</li>
+          <li>Cadeia de custódia — Thiago + Bianca</li>
+          <li>Análise de artefatos — Wesley + Samer</li>
+          <li>Ferramentas e sistemas — Matheus</li>
+          <li>Documentação contínua — Bianca</li>
+          <li>Relatório técnico final</li>
+          <li>Apresentação da investigação</li>
+        </ul>
+      </section>
+
+      <section class="branch who">
+        <h2>Onde acompanhamos</h2>
+        <ul>
+          <li>Trello: A definir → A fazer → Em desenvolvimento → Revisão → Concluído</li>
+          <li>GitHub: github.com/gabriellucasalves/Nexus-interprise</li>
+          <li>Cronograma público: https://gabriellucasalves.github.io/Nexus-interprise/cronograma-mapa-mental.html</li>
+          <li>Entrega oficial: toda quarta-feira</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Fonte: primeira entrega da disciplina + quadro Trello NEXUS | Perícia Digital. Atualizado em 18/08/2026. As sprints 02 em diante ficam como A DEFINIR até o professor passar as instruções; só a cadência de quarta-feira está fechada.
+  </footer>
+</body>
+</html>
