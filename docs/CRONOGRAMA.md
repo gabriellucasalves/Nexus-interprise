@@ -35,16 +35,31 @@ mindmap
       23/09 Sprint 07 a definir
       30/09 Sprint 08 a definir
       Outubro a dezembro a definir
-    Ciclo previsto
-      Identificação do incidente
-      Aquisição e preservação
+    A fazer no Trello sem data
+      Identificação do incidente e do ambiente
+      Aquisição e preservação de evidências
       Cadeia de custódia
-      Análise de artefatos
-      Ferramentas forenses
-      Documentação
-      Relatório final
-      Apresentação
+      Análise de artefatos digitais
+      Ferramentas forenses e análise de sistemas
+      Documentação técnica contínua
+      Relatório técnico final
+      Apresentação da investigação
 ```
+
+## Cards A fazer (Trello) — sem data definida
+
+Os mesmos cartões da lista **A fazer** do quadro entram no cronograma como atividades previstas. A data só será preenchida quando o professor definir a sprint.
+
+| Atividade | Data | Status |
+| --- | --- | --- |
+| Identificação do incidente e do ambiente | Sem data | A fazer |
+| Aquisição e preservação de evidências | Sem data | A fazer |
+| Cadeia de custódia | Sem data | A fazer |
+| Análise de artefatos digitais | Sem data | A fazer |
+| Ferramentas forenses e análise de sistemas | Sem data | A fazer |
+| Documentação técnica contínua | Sem data | A fazer |
+| Relatório técnico final | Sem data | A fazer |
+| Apresentação da investigação | Sem data | A fazer |
 
 ## Entregas de quarta-feira (2026.2)
 
