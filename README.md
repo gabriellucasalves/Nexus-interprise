@@ -1,4 +1,4 @@
-# 🔎 Nexus | Consultoria em Perícia Digital
+# 🔎 Nexus | Consulta em Perícia Digital
 
 **Conectando evidências. Revelando respostas.**
 
