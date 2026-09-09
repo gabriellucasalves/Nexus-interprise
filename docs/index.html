@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus — Quadro do projeto</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a222c;
+      --line: #3d4f63;
+      --text: #e8eef4;
+      --muted: #9aabbc;
+      --entregue: #3d8b6e;
+      --fazer: #c48a2a;
+      --dev: #3d6ea8;
+      --accent: #5b8def;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+    header { padding: 22px 28px 14px; border-bottom: 1px solid var(--line); }
+    header h1 { margin: 0 0 6px; font-size: 22px; font-weight: 650; }
+    header p { margin: 0; color: var(--muted); font-size: 14px; }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    nav a {
+      color: var(--text); text-decoration: none; font-size: 13px;
+      border: 1px solid var(--line); padding: 6px 10px; background: #243044;
+    }
+    nav a:hover { border-color: var(--accent); }
+    .wrap { padding: 20px 28px 40px; display: grid; gap: 18px; }
+    .hero {
+      background: var(--panel); border: 1px solid var(--line); padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+    }
+    .hero strong { display: block; font-size: 16px; margin-bottom: 6px; }
+    .hero p { margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: start; }
+    .col h2 {
+      margin: 0 0 8px; font-size: 12px; letter-spacing: .05em;
+      text-transform: uppercase; color: var(--muted);
+    }
+    .card {
+      background: #141b23; border: 1px solid var(--line); padding: 12px; margin-bottom: 10px;
+    }
+    .card.ok { border-left: 4px solid var(--entregue); }
+    .card.now { border-left: 4px solid var(--dev); }
+    .card.next { border-left: 4px solid var(--fazer); }
+    .card b { display: block; font-size: 14px; margin-bottom: 6px; }
+    .card p, .card li { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.4; }
+    .card ul { margin: 6px 0 0; padding-left: 18px; }
+    .tag {
+      display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 6px;
+      text-transform: uppercase; margin: 0 6px 6px 0;
+    }
+    .tag-ok { background: #1d3d32; color: #8fd4b8; }
+    .tag-now { background: #1c334d; color: #9ec3ef; }
+    .tag-next { background: #3d3014; color: #e6c072; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #2a3542; vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    a { color: #9ec3ef; }
+    footer { padding: 0 28px 28px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nexus — Quadro do projeto</h1>
+    <p>Consulta em Perícia Digital · UNICEPLAC · ADS 4º semestre · Conectando evidências. Revelando respostas.</p>
+    <nav>
+      <a href="./cronograma-mapa-mental.html">Cronograma / sprints</a>
+      <a href="./caso-techcorp/">Caso TechCorp</a>
+      <a href="./sprint-01/Nexus_Primeira_Entrega_Gestao_e_Ferramentas.pdf">Sprint 01 (PDF)</a>
+      <a href="https://github.com/gabriellucasalves/Nexus-interprise">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="wrap">
+    <div class="hero">
+      <strong>Função do caso que a Nexus recebeu</strong>
+      <p>A TechCorp contratou a Nexus para investigar atividade suspeita ligada ao <b style="color:#e8eef4">CorpSync_Service</b>. A demanda não era “provar o crime”: era delimitar o que os vestígios comprovam, o que é hipótese e o que não se afirma.</p>
+      <p><b style="color:#e8eef4">Conclusão:</b> caso didático/controlado na FLARE-VM, com indicadores correlacionáveis. HTTP comprovado só em <code>127.0.0.1:8080</code>. Sem prova de C2 externo nem de exfiltração de <code>Financeiro.xlsx</code>.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col">
+        <h2>Concluído</h2>
+        <div class="card ok">
+          <span class="tag tag-ok">Sprint 01</span>
+          <b>Identidade, objetivo e gestão</b>
+          <p>Empresa Nexus, equipe, ferramentas, GitHub, Trello e cronograma.</p>
+        </div>
+        <div class="card ok">
+          <span class="tag tag-ok">Sprint 02</span>
+          <b>Revisão de literatura e referências</b>
+          <p>Fundamentação no documento da primeira entrega.</p>
+        </div>
+        <div class="card ok">
+          <span class="tag tag-ok">09/09/2026</span>
+          <b>Caso TechCorp — execução da perícia</b>
+          <ul>
+            <li>Identificação do ambiente FLARE-VM</li>
+            <li>Aquisição, SHA-256 e cadeia de custódia</li>
+            <li>Análise de código, logs, móvel e rede</li>
+            <li>Relatório no tom de pitch da Nexus</li>
+            <li>Apresentação com prints das evidências</li>
+            <li>Colas de fala de cada integrante</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col">
+        <h2>Em curso</h2>
+        <div class="card now">
+          <span class="tag tag-now">Apresentação</span>
+          <b>Defesa oral para o professor</b>
+          <p>Slides e colas prontos. Cada integrante explica a própria função.</p>
+        </div>
+        <div class="card now">
+          <span class="tag tag-now">Documentação</span>
+          <b>Registro contínuo no GitHub</b>
+          <p>Este quadro web substitui o Trello limitado. O andamento oficial fica aqui e no repositório.</p>
+        </div>
+        <div class="card next">
+          <span class="tag tag-next">Próximas quartas</span>
+          <b>Sprints 03, 04 e seguintes</b>
+          <p>Abrir no cronograma quando o professor passar a próxima atividade.</p>
+        </div>
+      </div>
+
+      <div class="col">
+        <h2>Quem faz o quê</h2>
+        <div class="card">
+          <table>
+            <tr><th>Integrante</th><th>Função</th></tr>
+            <tr><td>Gabriel Lucas Alves da Silva</td><td>Gestor / Líder</td></tr>
+            <tr><td>Thiago Costa Renovato</td><td>Aquisição e preservação</td></tr>
+            <tr><td>Wesley Thiago Matias Xavier</td><td>Análise (execução)</td></tr>
+            <tr><td>Samer Osama Mohammad Taleeb</td><td>Análise (revisão cruzada)</td></tr>
+            <tr><td>Matheus Nascimento Cardoso</td><td>Sistemas e ferramentas</td></tr>
+            <tr><td>Bianca Xavier de Oliveira</td><td>Documentação e relatório</td></tr>
+            <tr><td>Isabela Rosa Dos Santos Gontijo</td><td>Revisão e qualidade</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <strong>O que foi observado (fatos do exame)</strong>
+      <p>Eventos em 31/08/2026 · exame Nexus em 07/09/2026 · pasta <code>C:\LabForensic\Caso_TechCorp</code></p>
+      <table>
+        <tr><th>Horário</th><th>Observação</th></tr>
+        <tr><td>08:30</td><td>Exportação lógica simulada do dispositivo móvel (não é celular físico)</td></tr>
+        <tr><td>08:41:12</td><td>CorpSync_Service inicia · usuário analyst</td></tr>
+        <tr><td>08:43:27</td><td>Registro de tentativa de acesso a Financeiro.xlsx</td></tr>
+        <tr><td>08:44:18</td><td>Endpoint 192.168.56.20:8080 configurado no artefato</td></tr>
+        <tr><td>08:44:22</td><td>Requisição de teste · User-Agent CorpSync-Lab/4.2.1</td></tr>
+        <tr><td>Rede</td><td>Wireshark: GET /api/v1/sync em 127.0.0.1:8080, 200 OK — sem C2 externo</td></tr>
+        <tr><td>Código</td><td>CorpSync_Service.c só imprime indicadores (sem socket)</td></tr>
+      </table>
+    </div>
+
+    <div class="hero">
+      <strong>Arquivos da entrega</strong>
+      <p>
+        <a href="./caso-techcorp/Nexus_Relatorio_Investigacao_Forense_TechCorp.pdf">Relatório técnico</a> ·
+        <a href="./caso-techcorp/Nexus_Cadeia_de_Custodia.pdf">Cadeia de custódia</a> ·
+        <a href="./caso-techcorp/Nexus_Apresentacao_Caso_TechCorp.pptx">Apresentação</a> ·
+        <a href="./caso-techcorp/Nexus_Colas_Apresentacao.pdf">Colas</a> ·
+        <a href="./caso-techcorp/README.md">Resumo do caso</a>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    Quadro público da Nexus — substituto do Trello para documentação da disciplina.
+    Repositório: github.com/gabriellucasalves/Nexus-interprise
+  </footer>
+</body>
+</html>
