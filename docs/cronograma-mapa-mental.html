@@ -203,7 +203,7 @@
   <footer>Sprint 01 já está fechada e marcada como entregue. As demais sprints só ganham texto e tópicos quando forem abertas à esquerda. Status: a fazer (amarelo), em desenvolvimento (azul) e entregue (verde).</footer>
 
   <script>
-    const KEY = "nexus-cronograma-v2";
+    const KEY = "nexus-cronograma-v3";
     const STATUS = {
       fazer: "A fazer",
       desenvolvimento: "Em desenvolvimento",
@@ -235,8 +235,35 @@
           "Cronograma da equipe"
         ],
         esquerda: true
+      }, {
+        id: "s02",
+        numero: "02",
+        data: "19/08/2026",
+        status: "entregue",
+        texto: "Revisão de literatura e referências bibliográficas da Sprint 01/02.",
+        topicos: [
+          "Revisão de literatura",
+          "Referências bibliográficas"
+        ],
+        esquerda: true
+      }, {
+        id: "s05",
+        numero: "05",
+        data: "09/09/2026",
+        status: "entregue",
+        texto: "Caso TechCorp: a Nexus recebeu o CorpSync_Service, executou a perícia e documentou o pitch.",
+        topicos: [
+          "Identificação do ambiente e do objeto",
+          "Aquisição, hash SHA-256 e cadeia de custódia",
+          "Análise de código, logs, móvel e rede",
+          "Relatório técnico (fato × hipótese)",
+          "Apresentação UNICEPLAC com evidências",
+          "Colas de fala da equipe"
+        ],
+        esquerda: true
       }];
       DATAS.forEach(([numero, data]) => {
+        if (numero === "02" || numero === "05") return;
         sprints.push({
           id: "s" + numero,
           numero,

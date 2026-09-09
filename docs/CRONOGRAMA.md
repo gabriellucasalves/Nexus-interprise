@@ -23,24 +23,24 @@ mindmap
       Matheus — Ferramentas
       Samer — Análise
       Bianca — Documentação
+      Isabela — Qualidade
     Sprint 01 entregue
       Problema da empresa
       Justificativa
       Identidade, objetivo e equipe
       Documento da 1ª entrega
       GitHub, Trello e cronograma
+    Sprint 02 entregue
+      Revisão de literatura
+      Referências
+    Caso TechCorp entregue
+      Relatório técnico
+      Cadeia de custódia
+      Apresentação com evidências
+      Colas da equipe
     Cadência
       Toda quarta-feira
       Entrega de sprint
-    Pontos da investigação
-      Identificação do incidente
-      Aquisição e preservação
-      Cadeia de custódia
-      Análise de artefatos
-      Ferramentas forenses
-      Documentação
-      Relatório final
-      Apresentação
 ```
 
 ## Entregas de quarta-feira (2026.2)
@@ -48,10 +48,10 @@ mindmap
 | Data | Sprint | Status |
 | --- | --- | --- |
 | Já realizada | 01 | Entregue |
-| 19/08/2026 | 02 | A fazer — abrir à esquerda quando for trabalhar |
+| 19/08/2026 | 02 | Entregue — revisão de literatura e referências |
 | 26/08/2026 | 03 | A fazer |
 | 02/09/2026 | 04 | A fazer |
-| 09/09/2026 | 05 | A fazer |
+| 09/09/2026 | 05 | Entregue — Caso TechCorp (relatório, apresentação, colas) |
 | 16/09/2026 | 06 | A fazer |
 | 23/09/2026 | 07 | A fazer |
 | 30/09/2026 | 08 | A fazer |
