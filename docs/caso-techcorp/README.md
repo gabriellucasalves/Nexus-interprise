@@ -14,7 +14,7 @@ Caso **didático/controlado** na FLARE-VM, com indicadores correlacionáveis. Co
 | --- | --- |
 | [Nexus_Relatorio_Investigacao_Forense_TechCorp.pdf](Nexus_Relatorio_Investigacao_Forense_TechCorp.pdf) | Relatório técnico (pitch da Nexus + perícia) |
 | [Nexus_Cadeia_de_Custodia.pdf](Nexus_Cadeia_de_Custodia.pdf) | Cadeia de custódia do exame |
-| [Nexus_Apresentacao_Caso_TechCorp.pptx](Nexus_Apresentacao_Caso_TechCorp.pptx) | Apresentação UNICEPLAC com prints das evidências |
+| [Nexus_Apresentacao_Caso_TechCorp_Ajustada_Final.pptx](Nexus_Apresentacao_Caso_TechCorp_Ajustada_Final.pptx) | Apresentação UNICEPLAC ajustada (versão final) com evidências |
 | [Nexus_Colas_Apresentacao.pdf](Nexus_Colas_Apresentacao.pdf) | Colas de fala de cada integrante |
 
 ## O que foi observado
