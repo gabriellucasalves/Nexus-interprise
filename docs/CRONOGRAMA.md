@@ -11,7 +11,7 @@ Como usar:
 2. Nas próximas quartas, use **Abrir à esquerda** para trabalhar a sprint.
 3. Escreva o texto e os tópicos.
 4. Marque o status: **a fazer** (amarelo), **em desenvolvimento** (azul) ou **entregue** (verde). Todos os tópicos recebem a mesma etiqueta.
-5. O andamento detalhado dos pontos da investigação fica no Trello. Aqui eles aparecem só como lembrete da equipe.
+5. O Caso TechCorp está encerrado. O detalhe fica no [quadro do projeto](index.html). Os pontos da investigação abaixo estão entregues.
 
 ```mermaid
 mindmap
@@ -38,6 +38,7 @@ mindmap
       Cadeia de custódia
       Apresentação com evidências
       Colas da equipe
+      Roteiros de apresentação
     Cadência
       Toda quarta-feira
       Entrega de sprint
@@ -53,7 +54,7 @@ mindmap
 | 02/09/2026 | 04 | A fazer |
 | 09/09/2026 | 05 | Entregue — Caso TechCorp (relatório, apresentação, colas) |
 | 16/09/2026 | 06 | A fazer |
-| 23/09/2026 | 07 | A fazer |
+| 23/09/2026 | 07 | Entregue — fechamento do exercício e roteiros de apresentação |
 | 30/09/2026 | 08 | A fazer |
 | 07/10/2026 | 09 | A fazer |
 | 14/10/2026 | 10 | A fazer |

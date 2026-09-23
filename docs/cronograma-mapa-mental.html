@@ -181,14 +181,17 @@
         <h2>Pontos da investigação</h2>
         <p class="hint">Lembrete da equipe: o Caso TechCorp cobriu estes pontos. O andamento fechado está no quadro do projeto.</p>
         <ul class="topics" style="display:block">
-          <li>Identificação do incidente e do ambiente</li>
-          <li>Aquisição e preservação de evidências</li>
-          <li>Cadeia de custódia</li>
-          <li>Análise de artefatos digitais</li>
-          <li>Ferramentas forenses e análise de sistemas</li>
-          <li>Documentação técnica contínua</li>
-          <li>Relatório técnico final</li>
-          <li>Apresentação da investigação</li>
+          <li><span class="tag tag-entregue">Entregue</span> Identificação do ambiente — seção 4</li>
+          <li><span class="tag tag-entregue">Entregue</span> Inventário e SHA-256 — seção 8</li>
+          <li><span class="tag tag-entregue">Entregue</span> Dados móveis simulados — seção 9</li>
+          <li><span class="tag tag-entregue">Entregue</span> Análise estática do fonte — seção 10</li>
+          <li><span class="tag tag-entregue">Entregue</span> Event Viewer equivalente — seção 11</li>
+          <li><span class="tag tag-entregue">Entregue</span> Wireshark em loopback — seção 12</li>
+          <li><span class="tag tag-entregue">Entregue</span> Cadeia de custódia — seção 13</li>
+          <li><span class="tag tag-entregue">Entregue</span> Linha do tempo — seção 14</li>
+          <li><span class="tag tag-entregue">Entregue</span> Matriz de achados — seção 16</li>
+          <li><span class="tag tag-entregue">Entregue</span> Conclusão com limitações — seção 17</li>
+          <li><span class="tag tag-entregue">Entregue</span> Relatório, apresentação e roteiros</li>
         </ul>
       </div>
       <div class="panel">
@@ -201,10 +204,10 @@
       </div>
     </div>
   </div>
-  <footer>Sprint 01 já está fechada e marcada como entregue. As demais sprints só ganham texto e tópicos quando forem abertas à esquerda. Status: a fazer (amarelo), em desenvolvimento (azul) e entregue (verde).</footer>
+  <footer>Sprints 01, 02, 05 e 07 estão fechadas e marcadas como entregues, alinhadas ao relatório do Caso TechCorp. As quartas seguintes só ganham texto quando houver nova atividade. Status: a fazer (amarelo), em desenvolvimento (azul) e entregue (verde).</footer>
 
   <script>
-    const KEY = "nexus-cronograma-v3";
+    const KEY = "nexus-cronograma-v4";
     const STATUS = {
       fazer: "A fazer",
       desenvolvimento: "Em desenvolvimento",
@@ -232,7 +235,7 @@
           "Identidade, objetivo e equipe",
           "Documento da primeira entrega",
           "Repositório e README no GitHub",
-          "Quadro Trello com fluxo de sprint",
+          "Quadro do projeto no lugar do Trello",
           "Cronograma da equipe"
         ],
         esquerda: true
@@ -262,9 +265,23 @@
           "Colas de fala da equipe"
         ],
         esquerda: true
+      }, {
+        id: "s07",
+        numero: "07",
+        data: "23/09/2026",
+        status: "entregue",
+        texto: "Fechamento do exercício. O relatório atende o roteiro inteiro e os roteiros de fala de Gabriel, Bianca e Isabela estão prontos.",
+        topicos: [
+          "Seção 18 do relatório: todos os itens atendidos",
+          "Roteiro de apresentação do Gabriel",
+          "Roteiro de apresentação da Bianca",
+          "Roteiro de apresentação da Isabela",
+          "Quadro do projeto atualizado"
+        ],
+        esquerda: true
       }];
       DATAS.forEach(([numero, data]) => {
-        if (numero === "02" || numero === "05") return;
+        if (numero === "02" || numero === "05" || numero === "07") return;
         sprints.push({
           id: "s" + numero,
           numero,

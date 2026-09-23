@@ -16,6 +16,9 @@ Caso **didático/controlado** na FLARE-VM, com indicadores correlacionáveis. Co
 | [Nexus_Cadeia_de_Custodia.pdf](Nexus_Cadeia_de_Custodia.pdf) | Cadeia de custódia do exame |
 | [Nexus_Apresentacao_Caso_TechCorp_Ajustada_Final.pptx](Nexus_Apresentacao_Caso_TechCorp_Ajustada_Final.pptx) | Apresentação UNICEPLAC ajustada (versão final) com evidências |
 | [Nexus_Colas_Apresentacao.pdf](Nexus_Colas_Apresentacao.pdf) | Colas de fala de cada integrante |
+| [roteiros/Gabriel_Como_Apresentar_Nexus.pdf](roteiros/Gabriel_Como_Apresentar_Nexus.pdf) | Roteiro de apresentação — Gabriel |
+| [roteiros/Bia_Como_Apresentar_Nexus.pdf](roteiros/Bia_Como_Apresentar_Nexus.pdf) | Roteiro de apresentação — Bianca |
+| [roteiros/Isabela_Como_Apresentar_Nexus.pdf](roteiros/Isabela_Como_Apresentar_Nexus.pdf) | Roteiro de apresentação — Isabela |
 
 ## O que foi observado
 
