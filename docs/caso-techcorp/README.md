@@ -39,4 +39,4 @@ Caso **didático/controlado** na FLARE-VM, com indicadores correlacionáveis. Co
 | Bianca Xavier de Oliveira | Documentação e relatório |
 | Isabela Rosa Dos Santos Gontijo | Revisão e qualidade |
 
-Andamento no Trello: [NEXUS \| Perícia Digital](https://trello.com/b/1ibs4dN4/nexus-per%C3%ADcia-digital).
+Exercício encerrado. Andamento no quadro da Nexus: [Nexus — Quadro do projeto](https://gabriellucasalves.github.io/Nexus-interprise/).

@@ -30,11 +30,12 @@
     .wrap { padding: 20px 28px 40px; display: grid; gap: 18px; }
     .hero {
       background: var(--panel); border: 1px solid var(--line); padding: 16px 18px;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--entregue);
     }
     .hero strong { display: block; font-size: 16px; margin-bottom: 6px; }
     .hero p { margin: 0 0 8px; color: var(--muted); font-size: 14px; line-height: 1.45; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: start; }
+    .hero p:last-child { margin-bottom: 0; }
+    .cols { display: grid; grid-template-columns: 1fr 1.15fr 0.9fr; gap: 14px; align-items: start; }
     .col h2 {
       margin: 0 0 8px; font-size: 12px; letter-spacing: .05em;
       text-transform: uppercase; color: var(--muted);
@@ -43,8 +44,6 @@
       background: #141b23; border: 1px solid var(--line); padding: 12px; margin-bottom: 10px;
     }
     .card.ok { border-left: 4px solid var(--entregue); }
-    .card.now { border-left: 4px solid var(--dev); }
-    .card.next { border-left: 4px solid var(--fazer); }
     .card b { display: block; font-size: 14px; margin-bottom: 6px; }
     .card p, .card li { margin: 0; font-size: 13px; color: var(--muted); line-height: 1.4; }
     .card ul { margin: 6px 0 0; padding-left: 18px; }
@@ -53,8 +52,6 @@
       text-transform: uppercase; margin: 0 6px 6px 0;
     }
     .tag-ok { background: #1d3d32; color: #8fd4b8; }
-    .tag-now { background: #1c334d; color: #9ec3ef; }
-    .tag-next { background: #3d3014; color: #e6c072; }
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
     th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #2a3542; vertical-align: top; }
     th { color: var(--muted); font-weight: 600; }
@@ -77,9 +74,9 @@
 
   <div class="wrap">
     <div class="hero">
-      <strong>Função do caso que a Nexus recebeu</strong>
-      <p>A TechCorp contratou a Nexus para investigar atividade suspeita ligada ao <b style="color:#e8eef4">CorpSync_Service</b>. A demanda não era “provar o crime”: era delimitar o que os vestígios comprovam, o que é hipótese e o que não se afirma.</p>
-      <p><b style="color:#e8eef4">Conclusão:</b> caso didático/controlado na FLARE-VM, com indicadores correlacionáveis. HTTP comprovado só em <code>127.0.0.1:8080</code>. Sem prova de C2 externo nem de exfiltração de <code>Financeiro.xlsx</code>.</p>
+      <strong>Exercício encerrado — Caso TechCorp / CorpSync_Service</strong>
+      <p>A TechCorp contratou a Nexus para investigar atividade suspeita ligada ao <b style="color:#e8eef4">CorpSync_Service</b>. O relatório técnico (26 páginas, exame em 07/09/2026) registra o roteiro completo. A seção 18 marca cada item exigido como <b style="color:#8fd4b8">Atendido</b>.</p>
+      <p><b style="color:#e8eef4">Conclusão do documento:</b> caso didático/controlado na FLARE-VM, com indicadores correlacionáveis. HTTP comprovado só em <code>127.0.0.1:8080</code> (<code>GET /api/v1/sync</code>, 200 OK). Sem prova de C2 externo, sem socket no fonte e sem exfiltração de <code>Financeiro.xlsx</code>.</p>
     </div>
 
     <div class="cols">
@@ -88,7 +85,7 @@
         <div class="card ok">
           <span class="tag tag-ok">Sprint 01</span>
           <b>Identidade, objetivo e gestão</b>
-          <p>Empresa Nexus, equipe, ferramentas, GitHub, Trello e cronograma.</p>
+          <p>Empresa Nexus, equipe, ferramentas, GitHub e este quadro no lugar do Trello.</p>
         </div>
         <div class="card ok">
           <span class="tag tag-ok">Sprint 02</span>
@@ -96,41 +93,43 @@
           <p>Fundamentação no documento da primeira entrega.</p>
         </div>
         <div class="card ok">
-          <span class="tag tag-ok">09/09/2026</span>
-          <b>Caso TechCorp — execução da perícia</b>
+          <span class="tag tag-ok">Caso TechCorp</span>
+          <b>Perícia executada e documentada</b>
           <ul>
-            <li>Identificação do ambiente FLARE-VM</li>
-            <li>Aquisição, SHA-256 e cadeia de custódia</li>
-            <li>Análise de código, logs, móvel e rede</li>
-            <li>Relatório no tom de pitch da Nexus</li>
-            <li>Apresentação com prints das evidências</li>
-            <li>Colas de fala de cada integrante</li>
+            <li>Atividade A — dados móveis simulados</li>
+            <li>Atividade B — análise estática do fonte</li>
+            <li>Atividade C — Event Viewer equivalente</li>
+            <li>Atividade D — Wireshark em loopback</li>
+            <li>Cadeia de custódia, linha do tempo e matriz de achados</li>
+            <li>Conclusão com limitações e pitch da Nexus</li>
+            <li>Apresentação e colas de cada integrante</li>
           </ul>
         </div>
       </div>
 
       <div class="col">
-        <h2>Em curso</h2>
-        <div class="card now">
-          <span class="tag tag-now">Apresentação</span>
-          <b>Defesa oral para o professor</b>
-          <p>Slides e colas prontos. Cada integrante explica a própria função.</p>
-        </div>
-        <div class="card now">
-          <span class="tag tag-now">Documentação</span>
-          <b>Registro contínuo no GitHub</b>
-          <p>Este quadro web substitui o Trello limitado. O andamento oficial fica aqui e no repositório.</p>
-        </div>
-        <div class="card next">
-          <span class="tag tag-next">Próximas quartas</span>
-          <b>Sprints 03, 04 e seguintes</b>
-          <p>Abrir no cronograma quando o professor passar a próxima atividade.</p>
+        <h2>Roteiro exigido — todos atendidos</h2>
+        <div class="card ok">
+          <span class="tag tag-ok">Seção 18 do relatório</span>
+          <b>Itens do exercício</b>
+          <table>
+            <tr><th>Item</th><th>Onde está</th></tr>
+            <tr><td>Inventário e hashes SHA-256</td><td>Seção 8</td></tr>
+            <tr><td>Evidências e capturas</td><td>Figuras 3–19</td></tr>
+            <tr><td>Linha do tempo</td><td>Seção 14</td></tr>
+            <tr><td>Matriz de achados</td><td>Seção 16</td></tr>
+            <tr><td>Cadeia de custódia</td><td>Seção 13</td></tr>
+            <tr><td>Conclusão com limitações</td><td>Seção 17</td></tr>
+            <tr><td>Captura Wireshark</td><td>Figuras 12–17</td></tr>
+            <tr><td>Event Viewer</td><td>Figura 9 — CSV equivalente</td></tr>
+            <tr><td>Análise estática</td><td>Figura 8 — CorpSync_Service.c</td></tr>
+          </table>
         </div>
       </div>
 
       <div class="col">
-        <h2>Quem faz o quê</h2>
-        <div class="card">
+        <h2>Quem fez o quê</h2>
+        <div class="card ok">
           <table>
             <tr><th>Integrante</th><th>Função</th></tr>
             <tr><td>Gabriel Lucas Alves da Silva</td><td>Gestor / Líder</td></tr>
@@ -146,34 +145,34 @@
     </div>
 
     <div class="hero">
-      <strong>O que foi observado (fatos do exame)</strong>
+      <strong>O que o documento comprovou</strong>
       <p>Eventos em 31/08/2026 · exame Nexus em 07/09/2026 · pasta <code>C:\LabForensic\Caso_TechCorp</code></p>
       <table>
-        <tr><th>Horário</th><th>Observação</th></tr>
+        <tr><th>Horário</th><th>Fato registrado</th></tr>
         <tr><td>08:30</td><td>Exportação lógica simulada do dispositivo móvel (não é celular físico)</td></tr>
-        <tr><td>08:41:12</td><td>CorpSync_Service inicia · usuário analyst</td></tr>
-        <tr><td>08:43:27</td><td>Registro de tentativa de acesso a Financeiro.xlsx</td></tr>
-        <tr><td>08:44:18</td><td>Endpoint 192.168.56.20:8080 configurado no artefato</td></tr>
+        <tr><td>08:41:12</td><td>CorpSync_Service inicia · usuário analyst · evento 1001</td></tr>
+        <tr><td>08:43:27</td><td>Tentativa de acesso a Financeiro.xlsx registrada · evento 1002 · leitura/exfiltração indeterminada</td></tr>
+        <tr><td>08:44:18</td><td>Endpoint 192.168.56.20:8080 configurado · evento 1003 · não prova conexão com esse IP</td></tr>
         <tr><td>08:44:22</td><td>Requisição de teste · User-Agent CorpSync-Lab/4.2.1</td></tr>
         <tr><td>Rede</td><td>Wireshark: GET /api/v1/sync em 127.0.0.1:8080, 200 OK — sem C2 externo</td></tr>
-        <tr><td>Código</td><td>CorpSync_Service.c só imprime indicadores (sem socket)</td></tr>
+        <tr><td>Código</td><td>CorpSync_Service.c só imprime indicadores (sem socket, persistência ou ofuscação)</td></tr>
       </table>
     </div>
 
     <div class="hero">
-      <strong>Arquivos da entrega</strong>
+      <strong>Entregas do exercício</strong>
       <p>
         <a href="./caso-techcorp/Nexus_Relatorio_Investigacao_Forense_TechCorp.pdf">Relatório técnico</a> ·
         <a href="./caso-techcorp/Nexus_Cadeia_de_Custodia.pdf">Cadeia de custódia</a> ·
         <a href="./caso-techcorp/Nexus_Apresentacao_Caso_TechCorp_Ajustada_Final.pptx">Apresentação (ajustada final)</a> ·
-        <a href="./caso-techcorp/Nexus_Colas_Apresentacao.pdf">Colas</a> ·
+        <a href="./caso-techcorp/Nexus_Colas_Apresentacao.pdf">Colas da equipe</a> ·
         <a href="./caso-techcorp/README.md">Resumo do caso</a>
       </p>
     </div>
   </div>
 
   <footer>
-    Quadro público da Nexus — substituto do Trello para documentação da disciplina.
+    Quadro da Nexus — substituto do Trello. Exercício do Caso TechCorp concluído e alinhado ao relatório técnico.
     Repositório: github.com/gabriellucasalves/Nexus-interprise
   </footer>
 </body>
