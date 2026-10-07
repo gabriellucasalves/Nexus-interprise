@@ -8,6 +8,8 @@ Este diretório registra a execução do serviço: o que foi preservado, o que f
 
 Caso **didático/controlado** na FLARE-VM, com indicadores correlacionáveis. Comunicação HTTP comprovada só em `127.0.0.1:8080`. **Não** há prova de C2 externo, nem de exfiltração de `Financeiro.xlsx`.
 
+Atualização de 7 de outubro de 2026: relatório com a seção 8.1 Desenvolvimento e os identificadores EV-001 a EV-009, formatado em Times New Roman, corpo 12 pt, espaçamento 1,5, texto justificado e margens acadêmicas de 3 cm (superior/esquerda) e 2 cm (inferior/direita). Paginação, títulos de figuras e referências revisados.
+
 ## Entregas
 
 | Arquivo | O que é |
